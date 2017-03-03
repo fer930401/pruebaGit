@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="skytexModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="xtPlaneacion">
+          <Key>
+            <PropertyRef Name="fec_ini" />
+            <PropertyRef Name="fec_fin" />
+            <PropertyRef Name="id_maquina" />
+            <PropertyRef Name="id_batch" />
+            <PropertyRef Name="accion" />
+            <PropertyRef Name="opcion" />
+          </Key>
+          <Property Name="fec_ini" Type="datetime" Nullable="false" />
+          <Property Name="fec_fin" Type="datetime" Nullable="false" />
+          <Property Name="fec_ins" Type="datetime" />
+          <Property Name="id_maquina" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="id_batch" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="nom_bact" Type="nvarchar" MaxLength="120" />
+          <Property Name="status_proceso" Type="smallint" />
+          <Property Name="fol_dispo" Type="int" />
+          <Property Name="doc_dispo" Type="nchar" MaxLength="6" />
+          <Property Name="ef_cve" Type="nchar" MaxLength="3" />
+          <Property Name="accion" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="opcion" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="user_cve" Type="nchar" MaxLength="3" />
+        </EntityType>
+        <EntityContainer Name="skytexModelStoreContainer">
+          <EntitySet Name="xtPlaneacion" EntityType="Self.xtPlaneacion" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="skytexModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="xtPlaneacion">
+          <Key>
+            <PropertyRef Name="fec_ini" />
+            <PropertyRef Name="fec_fin" />
+            <PropertyRef Name="id_maquina" />
+            <PropertyRef Name="id_batch" />
+            <PropertyRef Name="accion" />
+            <PropertyRef Name="opcion" />
+          </Key>
+          <Property Name="fec_ini" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fec_fin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fec_ins" Type="DateTime" Precision="3" />
+          <Property Name="id_maquina" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_batch" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nom_bact" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="status_proceso" Type="Int16" />
+          <Property Name="fol_dispo" Type="Int32" />
+          <Property Name="doc_dispo" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="ef_cve" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="accion" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="opcion" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_cve" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="skytexEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="xtPlaneacion" EntityType="Self.xtPlaneacion" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="skytexModelStoreContainer" CdmEntityContainer="skytexEntities">
+          <EntitySetMapping Name="xtPlaneacion">
+            <EntityTypeMapping TypeName="skytexModel.xtPlaneacion">
+              <MappingFragment StoreEntitySet="xtPlaneacion">
+                <ScalarProperty Name="fec_ini" ColumnName="fec_ini" />
+                <ScalarProperty Name="fec_fin" ColumnName="fec_fin" />
+                <ScalarProperty Name="fec_ins" ColumnName="fec_ins" />
+                <ScalarProperty Name="id_maquina" ColumnName="id_maquina" />
+                <ScalarProperty Name="id_batch" ColumnName="id_batch" />
+                <ScalarProperty Name="nom_bact" ColumnName="nom_bact" />
+                <ScalarProperty Name="status_proceso" ColumnName="status_proceso" />
+                <ScalarProperty Name="fol_dispo" ColumnName="fol_dispo" />
+                <ScalarProperty Name="doc_dispo" ColumnName="doc_dispo" />
+                <ScalarProperty Name="ef_cve" ColumnName="ef_cve" />
+                <ScalarProperty Name="accion" ColumnName="accion" />
+                <ScalarProperty Name="opcion" ColumnName="opcion" />
+                <ScalarProperty Name="user_cve" ColumnName="user_cve" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
