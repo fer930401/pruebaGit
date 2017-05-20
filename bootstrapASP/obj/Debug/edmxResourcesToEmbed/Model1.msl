@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="developModelStoreContainer" CdmEntityContainer="developEntities">
+    <EntitySetMapping Name="alumnosF">
+      <EntityTypeMapping TypeName="developModel.alumnosF">
+        <MappingFragment StoreEntitySet="alumnosF">
+          <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="f_nacimiento" ColumnName="f_nacimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="curso">
+      <EntityTypeMapping TypeName="developModel.curso">
+        <MappingFragment StoreEntitySet="curso">
+          <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="developModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xcdconapl_cl">
+      <EntityTypeMapping TypeName="developModel.xcdconapl_cl">
+        <MappingFragment StoreEntitySet="xcdconapl_cl">
+          <ScalarProperty Name="tipdoc_cve" ColumnName="tipdoc_cve" />
+          <ScalarProperty Name="sp_cve" ColumnName="sp_cve" />
+          <ScalarProperty Name="num_reng" ColumnName="num_reng" />
+          <ScalarProperty Name="spd_cve" ColumnName="spd_cve" />
+          <ScalarProperty Name="prm1" ColumnName="prm1" />
+          <ScalarProperty Name="prm2" ColumnName="prm2" />
+          <ScalarProperty Name="prm3" ColumnName="prm3" />
+          <ScalarProperty Name="prm4" ColumnName="prm4" />
+          <ScalarProperty Name="prm5" ColumnName="prm5" />
+          <ScalarProperty Name="prm6" ColumnName="prm6" />
+          <ScalarProperty Name="prm7" ColumnName="prm7" />
+          <ScalarProperty Name="prm8" ColumnName="prm8" />
+          <ScalarProperty Name="prm9" ColumnName="prm9" />
+          <ScalarProperty Name="prm10" ColumnName="prm10" />
+          <ScalarProperty Name="prm11" ColumnName="prm11" />
+          <ScalarProperty Name="prm12" ColumnName="prm12" />
+          <ScalarProperty Name="prm13" ColumnName="prm13" />
+          <ScalarProperty Name="prm14" ColumnName="prm14" />
+          <ScalarProperty Name="prm15" ColumnName="prm15" />
+          <ScalarProperty Name="prm16" ColumnName="prm16" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xtPlaneacion">
+      <EntityTypeMapping TypeName="developModel.xtPlaneacion">
+        <MappingFragment StoreEntitySet="xtPlaneacion">
+          <ScalarProperty Name="fec_ini" ColumnName="fec_ini" />
+          <ScalarProperty Name="fec_fin" ColumnName="fec_fin" />
+          <ScalarProperty Name="fec_ins" ColumnName="fec_ins" />
+          <ScalarProperty Name="id_maquina" ColumnName="id_maquina" />
+          <ScalarProperty Name="id_batch" ColumnName="id_batch" />
+          <ScalarProperty Name="nom_bact" ColumnName="nom_bact" />
+          <ScalarProperty Name="status_proceso" ColumnName="status_proceso" />
+          <ScalarProperty Name="fol_dispo" ColumnName="fol_dispo" />
+          <ScalarProperty Name="doc_dispo" ColumnName="doc_dispo" />
+          <ScalarProperty Name="ef_cve" ColumnName="ef_cve" />
+          <ScalarProperty Name="accion" ColumnName="accion" />
+          <ScalarProperty Name="opcion" ColumnName="opcion" />
+          <ScalarProperty Name="user_cve" ColumnName="user_cve" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="developModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="developModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="developModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="developModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="developModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="developModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="developModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="developModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="developModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>
